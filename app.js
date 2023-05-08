@@ -2,7 +2,7 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-      tasks: null,
+      tasks: [],
       api_url: 'app/Http/Controllers/TasksController/',
       new_task: '',
       completedTask: [],
