@@ -11,18 +11,15 @@ createApp({
   methods: {
 
     add_task() {
-
-      // axios POST request
       const options = {
         url: 'app/Http/Controllers/TasksController/store.php',
         method: 'POST',
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        },
+        headers: { 'Content-Type': 'multipart/form-data' },
         data: {
-          new_task: {
+          new_task:
+          {
             "name": this.new_task,
-            "completed": ""
+            "done": ""
           }
         }
       }
@@ -45,6 +42,15 @@ createApp({
       } else {
         this.tasks[i].done = false
       }
+      const options = {
+        url: 'app/Http/Controllers/TasksController/toggle.php',
+        method: 'POST',
+        headers: { 'Content-Type': 'multipart/form-data' },
+        data: { index: i }
+      }
+
+      axios(options)
+        .catch(error => { console.error(error.message); })
     }
   },
   mounted() {
