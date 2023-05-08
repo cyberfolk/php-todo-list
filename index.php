@@ -17,7 +17,7 @@
               <!-- /.add_task -->
               <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-start align-items-center fw-bold" v-for="(task, index) in tasks" :class="{completed : task.done}">
-                  <button @click="completeTask(index)" class="bg-danger border-0 rounded py-1 px-2">
+                  <button @click="deleteTask(index)" class="bg-danger border-0 rounded py-1 px-2">
                     <i class="fa-solid fa-trash-can text-light"></i>
                   </button>
                   <div class="ms-3" @click="toggleDoneTask(index)" role="button">{{task.name}}</div>
@@ -39,10 +39,10 @@
 
 
           <div class="col-4">
-            <div class="completedTask mt-3 mt-lg-0">
+            <div class="deletedTasks mt-3 mt-lg-0">
               <h2 class="text-light text-center pb-1">Completed Tasks</h2>
-              <ul v-if="completedTask.length > 0" class="list-group">
-                <li v-for="(task, index) in completedTask" class="list-group-item fw-bold">{{task.name}}</li>
+              <ul v-if="deletedTasks.length > 0" class="list-group">
+                <li v-for="(task, index) in deletedTasks" class="list-group-item fw-bold">{{task.name}}</li>
               </ul>
               <div class="alert alert-danger " role="alert" v-else>
                 <strong>Al momento non hai completato nessuna Task</strong>
@@ -50,7 +50,7 @@
               <div class="text-end"> <small class="text-light">NB. Questi valori non sono persistenti</small>
               </div>
             </div>
-            <!-- /.completedTask -->
+            <!-- /.deletedTasks -->
           </div>
           <!-- /.col-4 -->
         </div>

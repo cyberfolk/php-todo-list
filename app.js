@@ -5,7 +5,7 @@ createApp({
       tasks: [],
       api_url: 'app/Http/Controllers/TasksController/',
       new_task: '',
-      completedTask: [],
+      deletedTasks: [],
     }
   },
   methods: {
@@ -24,10 +24,10 @@ createApp({
       this.fetchData()
     },
 
-    completeTask(i) {
-      this.completedTask.push(this.tasks[i])
+    deleteTask(i) {
+      this.deletedTasks.push(this.tasks[i])
       const data = { index: i }
-      const options = this.composeOptions('complete.php', 'POST', data)
+      const options = this.composeOptions('delete.php', 'POST', data)
       axios(options).catch(error => { console.error(error.message); })
       this.fetchData()
     },
