@@ -34,7 +34,7 @@ createApp({
 
     toggleDoneTask(i) {
       const data = { index: i }
-      const options = this.composeOptions('toggle.php', 'POST', data)
+      const options = this.composeOptions('toggleDone.php', 'POST', data)
       axios(options).catch(error => { console.error(error.message); })
       this.fetchData()
     },
