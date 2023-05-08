@@ -13,7 +13,10 @@ createApp({
       console.log('add a new task to the list');
 
       const data = {
-        new_task: this.new_task
+        new_task: {
+          "name": this.new_task,
+          "completed": false
+        }
       }
 
       axios.post(

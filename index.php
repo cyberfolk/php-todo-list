@@ -23,7 +23,7 @@
         </div>
         <!-- /.card -->
 
-        <form class="add_task col-3 m-auto" action=" index.php" method="get">
+        <form class="add_task col-3 m-auto">
           <div class="input-group mb-3">
             <input type="text" name="new_task" id="new_task" class="form-control " v-model="new_task" @keyup.enter="add_task" placeholder="Type a task here">
             <button class="input-group-text" @click="add_task">Add</button>
