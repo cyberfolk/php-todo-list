@@ -19,9 +19,8 @@ createApp({
         }
       }
       const options = this.composeOptions('store.php', 'POST', data)
-      axios(options)
-        .then(response => { this.tasks = response.data })
-        .catch(error => { console.error(error.message); })
+      axios(options).catch(error => { console.error(error.message); })
+      this.fetchData()
     },
 
     completeTask(i) {

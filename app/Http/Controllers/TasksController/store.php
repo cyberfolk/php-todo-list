@@ -12,14 +12,12 @@ if (isset($_POST['new_task'])) {
   array_unshift($tasks_array, $task);
 
   // convert the array back into a json string
-  $new_tasks_json_string = json_encode($tasks_array);
+  $tasks_array = json_encode($tasks_array);
   // replace the file content using file_put_contents()
-  file_put_contents($file_path, $new_tasks_json_string);
+  file_put_contents($file_path, $tasks_array);
   // add header application/json
   header('Content-Type: application/json');
 
   header("Access-Control-Allow-Origin: http://localhost:5173");
   header("Access-Control-Allow-Headers: X-Requested-With");
-  // echo json
-  echo $new_tasks_json_string;
 }
