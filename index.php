@@ -13,7 +13,12 @@
         <div class="card shadow col-3 m-auto mb-4">
           <!-- /.add_task -->
           <ul class="list-group">
-            <li class="list-group-item" v-for="task in tasks"> {{task}} </li>
+            <li class="list-group-item d-flex justify-content-between" v-for="(task, index) in tasks" :class="{completed : task.done}">
+              <div @click="toggleDoneTask(index)" role="button">{{task}}</div>
+              <button @click="completeTask(index)" class="bg-danger border-0 rounded py-1 px-2">
+                <i class="fa-solid fa-trash-can text-light"></i>
+              </button>
+            </li>
           </ul>
         </div>
         <!-- /.card -->
