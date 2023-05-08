@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include __DIR__ . "/assets/head.php" ?>
+<?php include __DIR__ . "/assets/partials/head.php" ?>
 
 <body class="bg-primary">
 
 
   <div id='app'>
-    <?php include __DIR__ . "/assets/header.php" ?>
+    <?php include __DIR__ . "/assets/partials/header.php" ?>
     <main id="app_main">
       <div class="container">
         <div class="row justify-content-center g-5">
