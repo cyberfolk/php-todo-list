@@ -9,17 +9,17 @@
     <?php include __DIR__ . "/assets/header.php" ?>
     <main id="app_main">
       <div class="container">
-        <div class="row">
-          <div class="col-3">
-            <h2 class="text-light text-center">Tasks</h2>
+        <div class="row justify-content-center g-5">
+          <div class="col-4">
+            <h2 class="text-light text-center pb-1">Tasks</h2>
             <div class="card shadow mb-4">
               <!-- /.add_task -->
               <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-between" v-for="(task, index) in tasks" :class="{completed : task.done}">
-                  <div @click="toggleDoneTask(index)" role="button">{{task.name}}</div>
+                <li class="list-group-item d-flex justify-content-start align-items-center" v-for="(task, index) in tasks" :class="{completed : task.done}">
                   <button @click="completeTask(index)" class="bg-danger border-0 rounded py-1 px-2">
                     <i class="fa-solid fa-trash-can text-light"></i>
                   </button>
+                  <div class="ms-3" @click="toggleDoneTask(index)" role="button">{{task.name}}</div>
                 </li>
               </ul>
             </div>
@@ -31,12 +31,12 @@
             </div>
             <!-- /.add_task -->
           </div>
-          <!-- /.col-3 -->
+          <!-- /.col-4 -->
 
 
-          <div class="col-3">
+          <div class="col-4">
             <div class="completedTask mt-3 mt-lg-0">
-              <h2 class="text-light text-center">Completed Tasks</h2>
+              <h2 class="text-light text-center pb-1">Completed Tasks</h2>
               <ul v-if="completedTask.length > 0" class="list-group">
                 <li v-for="(task, index) in completedTask" class="list-group-item">{{task.name}}</li>
               </ul>
@@ -46,7 +46,7 @@
             </div>
             <!-- /.completedTask -->
           </div>
-          <!-- /.col-3 -->
+          <!-- /.col-4 -->
         </div>
         <!-- /.row -->
       </div>
