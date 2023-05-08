@@ -1,30 +1,39 @@
-<!doctype html>
-<html lang='en'>
+<!DOCTYPE html>
+<html lang="en">
+<?php include __DIR__ . "/assets/head.php" ?>
 
-<head>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <title>Tasks List</title>
-  <link href='./style.css' rel='stylesheet'>
-</head>
+<body class="bg-primary">
 
-<body>
+
   <div id='app'>
-    <h1>Tasker</h1>
+    <?php include __DIR__ . "/assets/header.php" ?>
+    <main id="app_main">
+      <div class="container">
 
+        <div class="card shadow col-3 m-auto mb-4">
+          <!-- /.add_task -->
+          <ul class="list-group">
+            <li class="list-group-item" v-for="task in tasks"> {{task}} </li>
+          </ul>
+        </div>
+        <!-- /.card -->
 
-    <div class="add_task">
-      <input type="text" v-model="new_task" @keyup.enter="add_task" placeholder="Type a task here">
-    </div>
+        <form class="add_task col-3 m-auto" action=" index.php" method="get">
+          <div class="input-group mb-3">
+            <input type="text" name="new_task" id="new_task" class="form-control " v-model="new_task" @keyup.enter="add_task" placeholder="Type a task here">
+            <button class="input-group-text" @click="add_task">Add</button>
+          </div>
+        </form>
+        <!-- /.add_task -->
 
-
-    <ul>
-      <li v-for="task in tasks">
-        {{task}}
-      </li>
-    </ul>
-
+      </div>
+      <!-- /.container -->
+    </main>
+    <!-- /#app_main -->
   </div>
+  <!-- /#app -->
+
+
 
   <script src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
   <!-- Development only cdn, disable in production -->
