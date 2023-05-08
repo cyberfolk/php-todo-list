@@ -25,12 +25,10 @@
             </div>
             <!-- /.card -->
 
-            <form class="add_task">
-              <div class="input-group mb-3">
-                <input type="text" name="new_task" id="new_task" class="form-control " v-model="new_task" @keyup.enter="add_task" placeholder="Type a task here">
-                <button class="input-group-text" @click="add_task">Add</button>
-              </div>
-            </form>
+            <div class="add_task input-group mb-3">
+              <input type="text" name="new_task" id="new_task" class="form-control " v-model="new_task" @keyup.enter="add_task" placeholder="Type a task here">
+              <button class="input-group-text" @click="add_task">Add</button>
+            </div>
             <!-- /.add_task -->
           </div>
           <!-- /.col-3 -->
