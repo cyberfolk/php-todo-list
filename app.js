@@ -21,6 +21,7 @@ createApp({
       const options = this.composeOptions('store.php', 'POST', data)
       axios(options).catch(error => { console.error(error.message); })
       this.fetchData()
+      this.new_task = ""
     },
 
     completeTask(i) {
