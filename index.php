@@ -40,7 +40,7 @@
             <div class="completedTask mt-3 mt-lg-0">
               <h2 class="text-light text-center">Completed Tasks</h2>
               <ul v-if="completedTask.length > 0" class="list-group">
-                <li v-for="(task, index) in completedTask" class="list-group-item">{{task.text}}</li>
+                <li v-for="(task, index) in completedTask" class="list-group-item">{{task.name}}</li>
               </ul>
               <div class="alert alert-danger " role="alert" v-else>
                 <strong>Al momento non hai completato nessuna Task</strong>
