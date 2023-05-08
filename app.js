@@ -20,17 +20,16 @@ createApp({
       }
       const options = this.composeOptions('store.php', 'POST', data)
       axios(options).catch(error => { console.error(error.message); })
-      this.fetchData()
       this.new_task = ""
+      this.fetchData()
     },
 
     completeTask(i) {
       this.completedTask.push(this.tasks[i])
-      this.tasks.splice(i, 1);
       const data = { index: i }
       const options = this.composeOptions('complete.php', 'POST', data)
-      axios(options)
-        .catch(error => { console.error(error.message); })
+      axios(options).catch(error => { console.error(error.message); })
+      this.fetchData()
     },
 
     toggleDoneTask(i) {
