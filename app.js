@@ -15,7 +15,7 @@ createApp({
       const data = {
         new_task: {
           "name": this.new_task,
-          "completed": false
+          "completed": ""
         }
       }
 
