@@ -2,7 +2,9 @@ import { reactive } from 'vue'
 import axios from "axios";
 
 export const state = reactive({
-    tasks: [],
+    tasksTodo: [],
+    tasksDone: [],
+    tasksDeleted: [],
     api_url: 'http://localhost:8888/4-php/l-66-persistenza/php-todo-list-json-php/app/Http/Controllers/TasksController/',
     //deletedTasks: [],
 
@@ -14,10 +16,22 @@ export const state = reactive({
             data: data
         }
     },
-    fetchData() {
-        const options = this.composeOptions('index.php', 'GET', '')
+    fetchTodo() {
+        const options = this.composeOptions('getTodo.php', 'GET', '')
         axios(options)
-            .then(response => { this.tasks = response.data })
+            .then(response => { this.tasksTodo = response.data })
+            .catch(error => { console.error(error.message); })
+    },
+    fetchDone() {
+        const options = this.composeOptions('getDone.php', 'GET', '')
+        axios(options)
+            .then(response => { this.tasksDone = response.data })
+            .catch(error => { console.error(error.message); })
+    },
+    fetchDeleted() {
+        const options = this.composeOptions('getDeleted.php', 'GET', '')
+        axios(options)
+            .then(response => { this.tasksDeleted = response.data })
             .catch(error => { console.error(error.message); })
     }
 }
