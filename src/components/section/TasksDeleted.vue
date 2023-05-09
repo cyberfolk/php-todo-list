@@ -7,7 +7,7 @@ export default {
     mounted() { state.fetchDeleted() },
     methods: {
         restoreTask(i) {
-            const data = { index: i, start_path: "tasksDeleted.json" }
+            const data = { index: i, start_path: "/tasks/tasksDeleted.json" }
             const options = state.composeOptions('restore.php', 'POST', data)
             axios(options).catch(error => { console.error(error.message); })
             state.fetchTodo()
