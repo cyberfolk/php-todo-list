@@ -25,9 +25,9 @@ export default {
 </script>
 
 <template>
-    <!-- Not yet implemented -->
     <section id="tasks_deleted" class="col-4">
         <h2 class="text-light text-center pb-1">Done Tasks</h2>
+
         <ul v-if="state.tasksDone.length" class="list-group">
             <li v-for="(task, index) in state.tasksDone" class="list-group-item fw-bold">
                 <button @click="deleteTask(index)" class="bg-danger border-0 rounded py-1 px-2 me-2">
@@ -39,6 +39,7 @@ export default {
                 <span class="ms-2" role="button">{{ task.name }}</span>
             </li>
         </ul>
+
         <div class="alert alert-danger " role="alert" v-else>
             <strong>Al momento non hai completato nessuna Task</strong>
         </div>
