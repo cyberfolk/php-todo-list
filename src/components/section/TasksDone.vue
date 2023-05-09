@@ -17,8 +17,6 @@ export default {
         <div class="alert alert-danger " role="alert" v-else>
             <strong>Al momento non hai completato nessuna Task</strong>
         </div>
-        <div class="text-end"><small class="text-light">NB. Questi valori non sono persistenti</small></div>
-        <div class="text-end"><small class="text-light">NB. Funzionalità non ancora implementata</small></div>
     </section>
     <!-- /#tasks_deleted -->
 </template>
