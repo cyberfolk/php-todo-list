@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/helper/functions.php';
 
-$file_path = '/tasks/tasksTodo.json';
+$file_path = 'tasks/tasksTodo.json';
 
 if (isset($_POST['new_task'])) {
   $task = [

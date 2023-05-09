@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/helper/functions.php';
-$todo_path = '/tasks/tasksTodo.json';
-$done_path = '/tasks/tasksDone.json';
+$todo_path = 'tasks/tasksTodo.json';
+$done_path = 'tasks/tasksDone.json';
 
 if (isset($_POST['index'])) {
     $index = $_POST['index'];

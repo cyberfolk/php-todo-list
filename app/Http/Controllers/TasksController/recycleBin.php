@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/helper/functions.php';
 
-$deleted_path = '/tasks/tasksDeleted.json';
+$deleted_path = 'tasks/tasksDeleted.json';
 
 // read the json file with file_get_contents
 $deleted_json = file_get_contents($deleted_path);

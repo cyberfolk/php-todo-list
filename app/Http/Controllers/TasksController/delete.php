@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/helper/functions.php';
-$deleted_path = '/tasks/tasksDeleted.json';
+$deleted_path = 'tasks/tasksDeleted.json';
 $start_path = $_POST['start_path']; // The directory that contains the task to move - tasksTodo.json or tasksDone.json
 
 if (isset($_POST['index'])) {
