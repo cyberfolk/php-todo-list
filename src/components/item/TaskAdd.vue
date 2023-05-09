@@ -17,7 +17,7 @@ export default {
             const options = state.composeOptions('store.php', 'POST', data)
             axios(options).catch(error => { console.error(error.message); })
             this.new_task = ""
-            state.fetchData()
+            state.fetchTodo()
         },
     }
 };
