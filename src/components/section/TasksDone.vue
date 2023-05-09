@@ -10,8 +10,15 @@ export default {
             const data = { index: i, start_path: "tasksDone.json" }
             const options = state.composeOptions('restore.php', 'POST', data)
             axios(options).catch(error => { console.error(error.message); })
-            state.fetchTodo()
             state.fetchDone()
+            state.fetchTodo()
+        },
+        deleteTask(i) {
+            const data = { index: i, start_path: "tasksDone.json" }
+            const options = state.composeOptions('delete.php', 'POST', data)
+            axios(options).catch(error => { console.error(error.message); })
+            state.fetchDone()
+            state.fetchDeleted()
         },
     }
 };
