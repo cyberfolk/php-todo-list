@@ -15,6 +15,7 @@ export default {
             const options = state.composeOptions('delete.php', 'POST', data)
             axios(options).catch(error => { console.error(error.message); })
             state.fetchTodo()
+            state.fetchDeleted()
         },
 
         toggleDoneTask(i) {
