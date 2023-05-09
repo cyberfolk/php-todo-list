@@ -11,13 +11,7 @@ createApp({
   methods: {
 
     add_task() {
-      const data = {
-        new_task:
-        {
-          "name": this.new_task,
-          "done": ""
-        }
-      }
+      const data = { new_task: this.new_task }
       const options = this.composeOptions('store.php', 'POST', data)
       axios(options).catch(error => { console.error(error.message); })
       this.new_task = ""
