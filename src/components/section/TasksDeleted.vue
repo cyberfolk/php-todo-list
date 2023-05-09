@@ -54,7 +54,7 @@ export default {
             </li>
         </ul>
         <div class="alert alert-danger " role="alert" v-else>
-            <strong>Al momento non hai completato nessuna Task</strong>
+            <strong>Al momento non ci sono task nel cestino</strong>
         </div>
     </section>
     <!-- /#tasks_deleted -->
