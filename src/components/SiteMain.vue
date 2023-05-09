@@ -1,6 +1,6 @@
 <script>
-import TasksTodo from "./item/TasksTodo.vue";
-import TasksDeleted from "./item/TasksDeleted.vue";
+import TasksTodo from "./section/TasksTodo.vue";
+import TasksDeleted from "./section/TasksDeleted.vue";
 export default {
     name: "SiteMain",
     components: {

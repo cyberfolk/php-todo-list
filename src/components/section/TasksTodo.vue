@@ -1,6 +1,6 @@
 <script>
 import { state } from "../../state.js";
-import TaskAdd from "./TaskAdd.vue";
+import TaskAdd from "../item/TaskAdd.vue";
 import axios from "axios";
 export default {
     name: "TasksTodo",
