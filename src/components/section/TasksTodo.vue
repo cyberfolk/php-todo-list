@@ -18,11 +18,12 @@ export default {
             state.fetchDeleted()
         },
 
-        toggleDoneTask(i) {
+        completeTask(i) {
             const data = { index: i }
-            const options = state.composeOptions('toggleDone.php', 'POST', data)
+            const options = state.composeOptions('complete.php', 'POST', data)
             axios(options).catch(error => { console.error(error.message); })
             state.fetchTodo()
+            state.fetchDone()
         },
     },
     mounted() {
@@ -37,11 +38,14 @@ export default {
         <div class="card shadow mb-4" v-if="state.tasksTodo.length">
             <!-- /.add_task -->
             <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-start align-items-center fw-bold" v-for="(task, index) in state.tasksTodo" :class="{ completed: task.done }">
-                    <button @click="deleteTask(index)" class="bg-danger border-0 rounded py-1 px-2">
+                <li class="list-group-item d-flex justify-content-start align-items-center fw-bold ps-2" v-for="(task, index) in state.tasksTodo" :class="{ completed: task.done }">
+                    <button @click="deleteTask(index)" class="bg-danger border-0 rounded py-1 px-2 me-2">
                         <i class="fa-solid fa-trash-can text-light"></i>
                     </button>
-                    <div class="ms-3" @click="toggleDoneTask(index)" role="button">{{ task.name }}</div>
+                    <button @click="completeTask(index)" class="bg-success border-0 rounded py-1 px-2">
+                        <i class="fa-solid fa-check text-light"></i>
+                    </button>
+                    <div class="ms-2" role="button">{{ task.name }}</div>
                 </li>
             </ul>
         </div>
