@@ -16,23 +16,17 @@ export const state = reactive({
             data: data
         }
     },
-    fetchTodo() {
-        const options = this.composeOptions('get/getTodo.php', 'GET', '')
-        axios(options)
-            .then(response => { this.tasksTodo = response.data })
-            .catch(error => { console.error(error.message); })
+    async fetchTodo() {
+        const response = await axios.get(this.api_url + 'get/getTodo.php')
+        this.tasksTodo = response.data;
     },
-    fetchDone() {
-        const options = this.composeOptions('get/getDone.php', 'GET', '')
-        axios(options)
-            .then(response => { this.tasksDone = response.data })
-            .catch(error => { console.error(error.message); })
+    async fetchDone() {
+        const response = await axios.get(this.api_url + 'get/getDone.php')
+        this.tasksDone = response.data;
     },
-    fetchDeleted() {
-        const options = this.composeOptions('get/getDeleted.php', 'GET', '')
-        axios(options)
-            .then(response => { this.tasksDeleted = response.data })
-            .catch(error => { console.error(error.message); })
+    async fetchDeleted() {
+        const response = await axios.get(this.api_url + 'get/getDeleted.php')
+        this.tasksDeleted = response.data;
     }
 }
 );
