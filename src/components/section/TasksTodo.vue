@@ -5,9 +5,7 @@ import axios from "axios";
 export default {
     name: "TasksTodo",
     components: { TaskAdd, },
-    data() {
-        return { state, };
-    },
+    data() { return { state, }; },
     methods: {
         deleteTask(i) {
             //this.deletedTasks.push(this.tasks[i])
@@ -38,14 +36,14 @@ export default {
         <div class="card shadow mb-4" v-if="state.tasksTodo.length">
             <!-- /.add_task -->
             <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-start align-items-center fw-bold ps-2" v-for="(task, index) in state.tasksTodo" :class="{ completed: task.done }">
+                <li class="list-group-item fw-bold ps-2" v-for="(task, index) in state.tasksTodo" :class="{ completed: task.done }">
                     <button @click="deleteTask(index)" class="bg-danger border-0 rounded py-1 px-2 me-2">
                         <i class="fa-solid fa-trash-can text-light"></i>
                     </button>
                     <button @click="completeTask(index)" class="bg-success border-0 rounded py-1 px-2">
                         <i class="fa-solid fa-check text-light"></i>
                     </button>
-                    <div class="ms-2" role="button">{{ task.name }}</div>
+                    <span class="ms-2" role="button">{{ task.name }}</span>
                 </li>
             </ul>
         </div>

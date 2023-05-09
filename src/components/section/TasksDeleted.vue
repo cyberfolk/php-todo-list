@@ -46,11 +46,11 @@ export default {
             </div>
         </div>
         <ul v-if="state.tasksDeleted.length" class="list-group">
-            <li v-for="(task, index) in state.tasksDeleted" class="list-group-item d-flex justify-content-start align-items-center fw-bold ps-2">
+            <li v-for="(task, index) in state.tasksDeleted" class="list-group-item d-flex fw-bold ps-2">
                 <button @click="restoreTask(index)" class="bg-warning border-0 rounded py-1 px-2 me-1">
                     <i class="fa-solid fa-trash-can-arrow-up text-light"></i>
                 </button>
-                <div class="ms-2" role="button">{{ task.name }}</div>
+                <span class="ms-2" role="button">{{ task.name }}</span>
             </li>
         </ul>
         <div class="alert alert-danger " role="alert" v-else>
