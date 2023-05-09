@@ -17,19 +17,19 @@ export const state = reactive({
         }
     },
     fetchTodo() {
-        const options = this.composeOptions('getTodo.php', 'GET', '')
+        const options = this.composeOptions('get/getTodo.php', 'GET', '')
         axios(options)
             .then(response => { this.tasksTodo = response.data })
             .catch(error => { console.error(error.message); })
     },
     fetchDone() {
-        const options = this.composeOptions('getDone.php', 'GET', '')
+        const options = this.composeOptions('get/getDone.php', 'GET', '')
         axios(options)
             .then(response => { this.tasksDone = response.data })
             .catch(error => { console.error(error.message); })
     },
     fetchDeleted() {
-        const options = this.composeOptions('getDeleted.php', 'GET', '')
+        const options = this.composeOptions('get/getDeleted.php', 'GET', '')
         axios(options)
             .then(response => { this.tasksDeleted = response.data })
             .catch(error => { console.error(error.message); })
