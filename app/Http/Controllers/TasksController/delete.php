@@ -26,6 +26,7 @@ if (isset($_POST['index'])) {
     file_put_contents($todo_path, $todo_array);
     file_put_contents($deleted_path, $deleted_array);
 
+
     // add header application/json
     header('Content-Type: application/json');
     header("Access-Control-Allow-Origin: http://localhost:5173");
