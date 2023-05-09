@@ -7,14 +7,14 @@ export default {
     mounted() { state.fetchDone() },
     methods: {
         restoreTask(i) {
-            const data = { index: i, start_path: "/tasks/tasksDone.json" }
+            const data = { index: i, start_path: "tasks/tasksDone.json" }
             const options = state.composeOptions('restore.php', 'POST', data)
             axios(options).catch(error => { console.error(error.message); })
             state.fetchDone()
             state.fetchTodo()
         },
         deleteTask(i) {
-            const data = { index: i, start_path: "/tasks/tasksDone.json" }
+            const data = { index: i, start_path: "tasks/tasksDone.json" }
             const options = state.composeOptions('delete.php', 'POST', data)
             axios(options).catch(error => { console.error(error.message); })
             state.fetchDone()
