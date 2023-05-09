@@ -8,9 +8,10 @@ export default {
     data() { return { state, }; },
     methods: {
         deleteTask(i) {
-            const data = { index: i }
+            const data = { index: i, start_path: "tasksTodo.json" }
             const options = state.composeOptions('delete.php', 'POST', data)
             axios(options).catch(error => { console.error(error.message); })
+            .then(response => { console.log(response.data) })
             state.fetchTodo()
             state.fetchDeleted()
         },
