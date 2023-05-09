@@ -5,11 +5,11 @@ $todo_path = 'tasksTodo.json';
 $deleted_path = 'tasksDeleted.json';
 
 // read the json file with file_get_contents
-$todo_string = file_get_contents($todo_path);
-$deleted_string = file_get_contents($deleted_path);
-// convert the json_string into an associative array with json_decode()
-$todo_array = json_decode($todo_string, true);
-$deleted_array = json_decode($deleted_string, true);
+$todo_json = file_get_contents($todo_path);
+$deleted_json = file_get_contents($deleted_path);
+// convert the json_json into an associative array with json_decode()
+$todo_array = json_decode($todo_json, true);
+$deleted_array = json_decode($deleted_json, true);
 
 // Restore all deleted_array into todo_array
 $todo_array = array_merge($todo_array, $deleted_array);

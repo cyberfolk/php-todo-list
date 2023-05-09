@@ -1,9 +1,9 @@
 <?php
 
-function get_file_string($file_path)
+function get_file_json($file_path)
 {
-    $file_string = file_get_contents($file_path);
-    echo $file_string;
+    $file_json = file_get_contents($file_path);
+    echo $file_json;
 }
 
 // add header application/json

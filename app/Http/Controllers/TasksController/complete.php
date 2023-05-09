@@ -7,11 +7,11 @@ if (isset($_POST['index'])) {
     $index = $_POST['index'];
 
     // read the json file with file_get_contents
-    $todo_string = file_get_contents($todo_path);
-    $done_string = file_get_contents($done_path);
+    $todo_json = file_get_contents($todo_path);
+    $done_json = file_get_contents($done_path);
     // convert the json_string into an associative array with json_decode()
-    $todo_array = json_decode($todo_string, true);
-    $done_array = json_decode($done_string, true);
+    $todo_array = json_decode($todo_json, true);
+    $done_array = json_decode($done_json, true);
 
     $todo_array[$index]["done"] = !$todo_array[$index]["done"];
 

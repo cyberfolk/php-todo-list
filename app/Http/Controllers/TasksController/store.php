@@ -10,9 +10,9 @@ if (isset($_POST['new_task'])) {
   ];
 
   // read the json file with file_get_contents
-  $tasks_string = file_get_contents($file_path);
-  // convert the json_string into an associative array with json_decode()
-  $tasks_array = json_decode($tasks_string, true);
+  $tasks_json = file_get_contents($file_path);
+  // convert the json_json into an associative array with json_decode()
+  $tasks_array = json_decode($tasks_json, true);
   //add the new task to the array
   array_unshift($tasks_array, $task);
 

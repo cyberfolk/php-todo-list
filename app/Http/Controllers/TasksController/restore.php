@@ -8,11 +8,11 @@ if (isset($_POST['index'])) {
     $index = $_POST['index'];
 
     // read the json file with file_get_contents
-    $todo_string = file_get_contents($todo_path);
-    $deleted_string = file_get_contents($deleted_path);
-    // convert the json_string into an associative array with json_decode()
-    $todo_array = json_decode($todo_string, true);
-    $deleted_array = json_decode($deleted_string, true);
+    $todo_json = file_get_contents($todo_path);
+    $deleted_json = file_get_contents($deleted_path);
+    // convert the json_json into an associative array with json_decode()
+    $todo_array = json_decode($todo_json, true);
+    $deleted_array = json_decode($deleted_json, true);
 
     // Get the deleted from todo_array
     $restored_task = $deleted_array[$index];
