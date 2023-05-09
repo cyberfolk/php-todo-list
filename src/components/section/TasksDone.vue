@@ -1,9 +1,20 @@
 <script>
 import { state } from "../../state.js";
+import axios from "axios";
 export default {
     name: "TasksDone",
     data() { return { state, }; },
-    mounted() { state.fetchDone() }
+    mounted() { state.fetchDone() },
+    methods: {
+        restoreTask(i) {
+            const data = { index: i, start_path: "tasksDone.json" }
+            const options = state.composeOptions('restore.php', 'POST', data)
+            axios(options).catch(error => { console.error(error.message); })
+                .then(response => { console.log(response.data) })
+            state.fetchTodo()
+            state.fetchDone()
+        },
+    }
 };
 </script>
 
@@ -16,8 +27,8 @@ export default {
                 <button @click="deleteTask(index)" class="bg-danger border-0 rounded py-1 px-2 me-2">
                     <i class="fa-solid fa-trash-can text-light"></i>
                 </button>
-                <button @click="completeTask(index)" class="bg-success border-0 rounded py-1 px-2">
-                    <i class="fa-solid fa-check text-light"></i>
+                <button @click="restoreTask(index)" class="bg-warning border-0 rounded py-1 px-2">
+                    <i class="fa-solid fa-trash-can-arrow-up text-light"></i>
                 </button>
                 <span class="ms-2" role="button">{{ task.name }}</span>
             </li>
