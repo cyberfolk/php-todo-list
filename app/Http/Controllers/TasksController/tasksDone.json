@@ -1,6 +1,1 @@
-[
-  { "name": "altra", "done": false },
-  { "name": "prova", "done": false },
-  { "name": "Task4", "done": false },
-  { "name": "boh", "done": false }
-]
+[{"name":"Task DONE - 1","done":true},{"name":"Task DONE - 2","done":true},{"name":"Task DONE - 3","done":true},{"name":"Task DONE - 4","done":true}]
