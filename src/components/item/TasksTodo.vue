@@ -1,56 +1,31 @@
 <script>
+import { state } from "../../state.js";
+import TaskAdd from "./TaskAdd.vue";
 import axios from "axios";
 export default {
     name: "TasksTodo",
+    components: { TaskAdd, },
     data() {
-        return {
-            tasks: [],
-            api_url: 'http://localhost:8888/4-php/l-66-persistenza/php-todo-list-json/app/Http/Controllers/TasksController/',
-            new_task: '',
-            //deletedTasks: [],
-        }
+        return { state, };
     },
     methods: {
-        add_task() {
-            const data = { new_task: this.new_task }
-            const options = this.composeOptions('store.php', 'POST', data)
-            axios(options).catch(error => { console.error(error.message); })
-            this.new_task = ""
-            this.fetchData()
-        },
-
         deleteTask(i) {
             //this.deletedTasks.push(this.tasks[i])
             const data = { index: i }
-            const options = this.composeOptions('delete.php', 'POST', data)
+            const options = state.composeOptions('delete.php', 'POST', data)
             axios(options).catch(error => { console.error(error.message); })
-            this.fetchData()
+            state.fetchData()
         },
 
         toggleDoneTask(i) {
             const data = { index: i }
-            const options = this.composeOptions('toggleDone.php', 'POST', data)
+            const options = state.composeOptions('toggleDone.php', 'POST', data)
             axios(options).catch(error => { console.error(error.message); })
-            this.fetchData()
+            state.fetchData()
         },
-
-        composeOptions(file, method, data) {
-            return {
-                url: this.api_url + file,
-                method: method,
-                headers: { 'Content-Type': 'multipart/form-data' },
-                data: data
-            }
-        },
-        fetchData() {
-            const options = this.composeOptions('index.php', 'GET', '')
-            axios(options)
-                .then(response => { this.tasks = response.data })
-                .catch(error => { console.error(error.message); })
-        }
     },
     mounted() {
-        this.fetchData()
+        state.fetchData()
     }
 };
 </script>
@@ -58,10 +33,10 @@ export default {
     <div id="tasks_todo" class="col-4">
         <h2 class="text-light text-center pb-1">Tasks</h2>
 
-        <div class="card shadow mb-4" v-if="tasks != null">
+        <div class="card shadow mb-4" v-if="state.tasks.length">
             <!-- /.add_task -->
             <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-start align-items-center fw-bold" v-for="(task, index) in tasks" :class="{ completed: task.done }">
+                <li class="list-group-item d-flex justify-content-start align-items-center fw-bold" v-for="(task, index) in state.tasks" :class="{ completed: task.done }">
                     <button @click="deleteTask(index)" class="bg-danger border-0 rounded py-1 px-2">
                         <i class="fa-solid fa-trash-can text-light"></i>
                     </button>
@@ -74,11 +49,7 @@ export default {
             <strong>Hai completato tutte le Task. Bravo.</strong>
         </div>
 
-        <div class="add_task input-group mb-3">
-            <input type="text" name="new_task" id="new_task" class="form-control " v-model.trim="new_task" @keyup.enter="add_task" placeholder="Type a task here">
-            <button class="input-group-text" @click="add_task">Add</button>
-        </div>
-        <!-- /.add_task -->
+        <TaskAdd></TaskAdd>
     </div>
     <!-- /#tasks_todo -->
 </template>
