@@ -1,4 +1,6 @@
 <?php
+include __DIR__ . '/functions.php';
+
 $deleted_path = 'tasksDeleted.json';
 
 // read the json file with file_get_contents
@@ -13,8 +15,3 @@ array_splice($deleted_array, 0, count($deleted_array)); //array_splice accepts 3
 $deleted_json = json_encode($deleted_array);
 // replace the file content using file_put_contents()
 file_put_contents($deleted_path, $deleted_json);
-
-// add header application/json
-header('Content-Type: application/json');
-header("Access-Control-Allow-Origin: http://localhost:5173");
-header("Access-Control-Allow-Headers: X-Requested-With");

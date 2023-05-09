@@ -1,4 +1,6 @@
 <?php
+include __DIR__ . '/functions.php';
+
 $file_path = 'tasksTodo.json';
 
 if (isset($_POST['new_task'])) {
@@ -18,9 +20,4 @@ if (isset($_POST['new_task'])) {
   $tasks_array = json_encode($tasks_array);
   // replace the file content using file_put_contents()
   file_put_contents($file_path, $tasks_array);
-  // add header application/json
-  header('Content-Type: application/json');
-
-  header("Access-Control-Allow-Origin: http://localhost:5173");
-  header("Access-Control-Allow-Headers: X-Requested-With");
 }

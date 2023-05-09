@@ -1,4 +1,5 @@
 <?php
+include __DIR__ . '/functions.php';
 $todo_path = 'tasksTodo.json';
 $done_path = 'tasksDone.json';
 
@@ -27,9 +28,4 @@ if (isset($_POST['index'])) {
     // replace the file content using file_put_contents()
     file_put_contents($todo_path, $todo_json);
     file_put_contents($done_path, $done_json);
-
-    // add header application/json
-    header('Content-Type: application/json');
-    header("Access-Control-Allow-Origin: http://localhost:5173");
-    header("Access-Control-Allow-Headers: X-Requested-With");
 }
