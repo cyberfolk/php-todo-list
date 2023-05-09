@@ -8,7 +8,6 @@ export default {
     data() { return { state, }; },
     methods: {
         deleteTask(i) {
-            //this.deletedTasks.push(this.tasks[i])
             const data = { index: i }
             const options = state.composeOptions('delete.php', 'POST', data)
             axios(options).catch(error => { console.error(error.message); })
