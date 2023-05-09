@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const state = reactive({
     tasks: [],
-    api_url: 'http://localhost:8888/4-php/l-66-persistenza/php-todo-list-json/app/Http/Controllers/TasksController/',
+    api_url: 'http://localhost:8888/4-php/l-66-persistenza/php-todo-list-json-php/app/Http/Controllers/TasksController/',
     //deletedTasks: [],
 
     composeOptions(file, method, data) {
