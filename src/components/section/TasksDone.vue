@@ -9,7 +9,7 @@ export default {
 
 <template>
     <!-- Not yet implemented -->
-    <div id="tasks_deleted" class="col-4">
+    <section id="tasks_deleted" class="col-4">
         <h2 class="text-light text-center pb-1">Done Tasks</h2>
         <ul v-if="state.tasksDone.length" class="list-group">
             <li v-for="(task, index) in state.tasksDone" class="list-group-item fw-bold">{{ task.name }}</li>
@@ -19,7 +19,7 @@ export default {
         </div>
         <div class="text-end"><small class="text-light">NB. Questi valori non sono persistenti</small></div>
         <div class="text-end"><small class="text-light">NB. Funzionalità non ancora implementata</small></div>
-    </div>
+    </section>
     <!-- /#tasks_deleted -->
 </template>
 

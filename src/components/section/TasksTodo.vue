@@ -30,7 +30,7 @@ export default {
 };
 </script>
 <template>
-    <div id="tasks_todo" class="col-4">
+    <section id="tasks_todo" class="col-4">
         <h2 class="text-light text-center pb-1">Todo Tasks</h2>
 
         <div class="card shadow mb-4" v-if="state.tasksTodo.length">
@@ -50,7 +50,7 @@ export default {
         </div>
 
         <TaskAdd></TaskAdd>
-    </div>
+    </section>
     <!-- /#tasks_todo -->
 </template>
 
