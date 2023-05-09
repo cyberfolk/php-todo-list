@@ -15,6 +15,8 @@ if (isset($_POST['index'])) {
 
     // Get the deleted from start_array
     $deleted_task = $start_array[$index];
+    // Set true done field
+    $deleted_task["done"] = true;
     // Add the deleted task to the array
     array_unshift($deleted_array, $deleted_task);
     // remove object in array by index

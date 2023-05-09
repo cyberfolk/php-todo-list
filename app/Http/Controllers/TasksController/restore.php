@@ -16,6 +16,8 @@ if (isset($_POST['index'])) {
 
     // Get the restored task from start_array
     $restored_task = $start_array[$index];
+    // Set false done field
+    $restored_task["done"] = false;
     // Add the restored task to the array
     array_unshift($todo_array, $restored_task);
     // remove object in array by index

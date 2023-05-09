@@ -13,10 +13,10 @@ if (isset($_POST['index'])) {
     $todo_array = json_decode($todo_json, true);
     $done_array = json_decode($done_json, true);
 
-    //$todo_array[$index]["done"] = !$todo_array[$index]["done"];
-
     // Get the deleted from todo_array
     $done_task = $todo_array[$index];
+    // Set true done field
+    $done_task["done"] = true;
     // Add the deleted task to the array
     array_unshift($done_array, $done_task);
     // remove object in array by index
