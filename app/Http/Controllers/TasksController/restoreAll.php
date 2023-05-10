@@ -11,8 +11,8 @@ $deleted_json = file_get_contents($deleted_path);
 $todo_array = json_decode($todo_json, true);
 $deleted_array = json_decode($deleted_json, true);
 // Set false all done field
-foreach ($deleted_array as $item) {
-    $item["done"] = false;
+foreach ($deleted_array as $key => $value) {
+    $value = false;
 }
 // Restore all deleted_array into todo_array
 $todo_array = array_merge($todo_array, $deleted_array);
