@@ -5,7 +5,7 @@ export const state = reactive({
     tasksTodo: [],
     tasksDone: [],
     tasksDeleted: [],
-    api_url: 'http://localhost:8888/04-php/l-66-persistenza/php-todo-list-json-php/app/Http/Controllers/TasksController/',
+    api_url: 'http://localhost:8888/5-php/php-todolist/2-todolist-cors/todolist-php/app/Http/Controllers/TasksController/',
     //deletedTasks: [],
 
     composeOptions(file, method, data) {

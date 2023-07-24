@@ -34,7 +34,7 @@ export default {
         <h2 class="text-light text-center pb-1">Todo Tasks</h2>
 
         <ul v-if="state.tasksTodo.length" class="list-group mb-4">
-            <li class="list-group-item fw-bold ps-2" v-for="(task, index) in state.tasksTodo" :class="{ completed: task.done }">
+            <li class="list-group-item fw-bold ps-2" v-for="(task, index) in state.tasksTodo">
                 <button @click="deleteTask(index)" class="bg-danger border-0 rounded py-1 px-2 me-2">
                     <i class="fa-solid fa-trash-can text-light"></i>
                 </button>
