@@ -1,13 +1,15 @@
-# Todo List php
+# TODO List - PHP
+**Initial commit:** 08/05/23
 
-In questa repo creo 2 differenti Todo List, entrambe:
+**Technologies:** PHP, Blade, Vite, Vue.js, Javascript Rest-API, HTML, CSS e Bootstrap.
 
--   Gestiscono la persistenza dei dati leggendoli da, e scrivendoli in un file JSON.
--   Permettono di segnare un task come completato facendo click sul testo
--   Permettono il toggle della task (completato/non completato)
--   Permettono l’eliminazione di un task
 
-## Milestone
+:memo: This repository contains two different TODO lists, each with these characteristics.
+- Manage data persistence by reading/writing it from/to a JSON file.
+- Allow you to mark a task as completed by clicking on the text
+- Allow the task to be toggled (completed/not completed)
+- Allow deletion of a task
 
--   [x] **1. Todo List Json** &rarr; Implementazione Base
--   [x] **2. Todo List Cors** &rarr; Tramite Axios metto in comunicazione il front-end creato con Vite e il Backend-PHP che gestisce il file JSON
+## Exercises list
+-   [x] **1. Todo List Json** &rarr; Base implementation.
+-   [x] **2. Todo List Cors** &rarr; Through Axios I connect the front-end created with Vite and the PHP Backend that manages the JSON file
