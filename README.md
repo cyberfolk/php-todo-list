@@ -1,7 +1,7 @@
 # TODO List - PHP
 **Initial commit:** 08/05/23
 
-**Technologies:** PHP, Blade, Vite, Vue.js, Javascript Rest-API, HTML, CSS e Bootstrap.
+**Technologies:** PHP, Vite, Vue.js, Javascript Rest-API, HTML, CSS e Bootstrap.
 
 **Info**: :memo: This repository contains two different TODO lists, each with these characteristics.
 - Manage data persistence by reading/writing it from/to a JSON file.
