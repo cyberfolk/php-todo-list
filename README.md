@@ -3,8 +3,7 @@
 
 **Technologies:** PHP, Blade, Vite, Vue.js, Javascript Rest-API, HTML, CSS e Bootstrap.
 
-
-:memo: This repository contains two different TODO lists, each with these characteristics.
+**Info**: :memo: This repository contains two different TODO lists, each with these characteristics.
 - Manage data persistence by reading/writing it from/to a JSON file.
 - Allow you to mark a task as completed by clicking on the text
 - Allow the task to be toggled (completed/not completed)
