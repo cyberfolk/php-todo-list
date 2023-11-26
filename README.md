@@ -12,4 +12,4 @@
 
 ## Exercises list
 -   [x] **1. Todo List Json** &rarr; Base implementation.
--   [x] **2. Todo List Cors** &rarr; Through Axios I connect the front-end created with Vite and the PHP Backend that manages the JSON file
+-   [x] **2. Todo List Cors** &rarr; Using Axios I connect the  Vite front-end and the PHP Backend that manages the JSON file
